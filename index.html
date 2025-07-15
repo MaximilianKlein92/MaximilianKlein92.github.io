@@ -9,3 +9,159 @@
         <script src="index.pack.js"></script>
     </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --header-bg: #222;
+            --header-text: #fff;
+            --card-bg: #fff;
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #f4f4f4;
+            --header-bg: #1e1e1e;
+            --header-text: #f4f4f4;
+            --card-bg: #1f1f1f;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease-in-out;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav a {
+            color: var(--header-text);
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--header-text);
+            color: var(--header-bg);
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--header-bg);
+            color: var(--header-text);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Maximilian Klein</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
+    </header>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Max, a neuroscientist and AI developer passionate about building intelligent systems and creative solutions. I love coding, robotics, and web design.</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>AI Music App</h3>
+                    <p>Real-time chord detection and visualization using AI.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Fitness Timer App</h3>
+                    <p>A custom workout timer for pyramid sets and bodyweight exercises.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Robotics Simulation</h3>
+                    <p>Self-learning Braitenberg vehicle with adaptive neural network.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:max@maxxart.de">max@maxxart.de</a></p>
+            <p>GitHub: <a href="https://github.com/MaximilianKlein92" target="_blank">My GitHub</a></p>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 Maximilian Klein | Built with ❤️
+    </footer>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark');
+            const btn = document.querySelector('.toggle-btn');
+            if (document.body.classList.contains('dark')) {
+                btn.textContent = '☀️ Light';
+            } else {
+                btn.textContent = '🌙 Dark';
+            }
+        }
+    </script>
+</body>
+</html>
